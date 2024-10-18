@@ -1,0 +1,65 @@
+/* Home.css */
+.home-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: box-shadow 0.2s;
+    padding: 10px;
+}
+
+.news-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.news-image {
+    width: 100px; /* Adjust based on your design */
+    height: auto;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.news-link {
+    color: #007bff;
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold;
+}
+
+.news-link:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+    color: #0056b3; /* Optional: Darker blue color on hover */
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+.error {
+    text-align: center;
+    color: red;
+}
