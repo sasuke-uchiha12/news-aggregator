@@ -39,10 +39,21 @@ const Category = () => {
             <h1>{category.charAt(0).toUpperCase() + category.slice(1)} News</h1>
             <ul>
                 {articles.map((article, index) => (
-                    <li key={index}>
-                        <a href={article.url} target="_blank" rel="noopener noreferrer">
-                            {article.title}
-                        </a>
+                    <li key={index} className="article-item">
+                        {/* Show the image if available */}
+                        {article.urlToImage && (
+                            <img 
+                                src={article.urlToImage} 
+                                alt={article.title} 
+                                className="article-image"
+                            />
+                        )}
+                        <div className="article-details">
+                            <a href={article.url} target="_blank" rel="noopener noreferrer">
+                                {article.title}
+                            </a>
+                            <p>{article.description}</p> {/* Optionally show description */}
+                        </div>
                     </li>
                 ))}
             </ul>

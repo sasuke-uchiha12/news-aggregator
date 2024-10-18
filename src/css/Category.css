@@ -2,69 +2,173 @@
 
 /* Overall container for the category component */
 .category-container {
-    max-width: 800px; /* Maximum width for the content */
-    margin: 0 auto; /* Center the container */
-    padding: 20px; /* Padding around the content */
-    font-family: 'Arial', sans-serif; /* Font style */
-    background-color: #f9f9f9; /* Light background color */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 1000px;
+    /* Increased max-width for wider screens */
+    margin: 0 auto;
+    /* Center the container */
+    padding: 20px;
+    /* Padding around the content */
+    font-family: 'Arial', sans-serif;
+    /* Font style */
+    background-color: #f9f9f9;
+    /* Light background color */
+    border-radius: 10px;
+    /* Slightly more rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Stronger shadow for depth */
 }
 
 /* Title styling */
 .category-container h1 {
-    font-size: 2em; /* Title font size */
-    margin-bottom: 20px; /* Space below the title */
-    text-align: center; /* Center align the title */
-    color: #333; /* Dark gray color for the title */
+    font-size: 2.5em;
+    /* Increased title font size */
+    margin-bottom: 25px;
+    /* More space below the title */
+    text-align: center;
+    /* Center align the title */
+    color: #2c3e50;
+    /* Darker blue-gray color for the title */
+    letter-spacing: 1px;
+    /* Spacing between letters for better readability */
 }
 
 /* List styling */
 .category-container ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
+    list-style-type: none;
+    /* Remove bullet points */
+    padding: 0;
+    /* Remove default padding */
+    margin: 0;
+    /* Ensure no margin for ul */
 }
 
 /* List item styling */
 .category-container li {
-    margin-bottom: 15px; /* Space between articles */
-    background-color: #fff; /* White background for articles */
-    border-radius: 5px; /* Rounded corners for list items */
-    padding: 15px; /* Padding inside the list item */
-    transition: box-shadow 0.2s ease, transform 0.2s ease; /* Transition for effects */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    display: flex;
+    /* Flexbox to align image and text */
+    align-items: center;
+    /* Vertically center align */
+    margin-bottom: 20px;
+    /* Increased space between articles */
+    background-color: #ffffff;
+    /* White background for articles */
+    border-radius: 8px;
+    /* More rounded corners */
+    padding: 15px;
+    /* Padding inside the list item */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* Smoother transition for effects */
+    cursor: pointer;
+    /* Pointer on hover */
+    overflow: hidden;
+    /* Hide overflow to maintain clean design */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    /* Subtle shadow */
 }
 
 /* Hover effect for list items */
 .category-container li:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Shadow on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    /* Larger shadow on hover */
+    transform: translateY(-3px);
+    /* Lift effect on hover */
+}
+
+/* Image styling inside list items */
+.category-container img {
+    width: 120px;
+    /* Fixed width for images */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 6px;
+    /* Rounded corners for the image */
+    margin-right: 15px;
+    /* Space between image and text */
+    object-fit: cover;
+    /* Ensure images are properly cropped */
+    flex-shrink: 0;
+    /* Prevent the image from shrinking */
+}
+
+/* Article text container */
+.article-details {
+    flex: 1;
+    /* Let the text take up the remaining space */
+    display: flex;
+    flex-direction: column;
+    /* Stack the title and description vertically */
 }
 
 /* Link styling */
 .category-container a {
-    text-decoration: none; /* Remove underline from links */
-    color: #007bff; /* Blue color for links */
-    font-weight: bold; /* Bold font for links */
+    text-decoration: none;
+    /* Remove underline from links */
+    color: #007bff;
+    /* Blue color for links */
+    font-weight: bold;
+    /* Bold font for links */
+    font-size: 1.2em;
+    /* Larger font size for links */
+    margin-bottom: 8px;
+    /* Space between title and description */
+    transition: color 0.2s ease;
+    /* Smooth color transition */
 }
 
 /* Link hover effect */
 .category-container a:hover {
-    text-decoration: none; /* Ensure no underline on hover */
-    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline;
+    /* Add underline on hover */
+    color: #0056b3;
+    /* Darker blue on hover */
+}
+
+/* Article description styling */
+.category-container p {
+    margin: 0;
+    font-size: 0.95em;
+    /* Smaller font for description */
+    color: #555;
+    /* Medium gray for description text */
+    line-height: 1.5;
+    /* Line height for better readability */
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .category-container {
-        padding: 15px; /* Less padding on smaller screens */
+        padding: 15px;
+        /* Less padding on smaller screens */
     }
 
     .category-container h1 {
-        font-size: 1.5em; /* Smaller title font size */
+        font-size: 2em;
+        /* Slightly smaller title font size */
+    }
+
+    .category-container li {
+        flex-direction: column;
+        /* Stack image and text vertically on smaller screens */
+        align-items: flex-start;
+        /* Align to the start */
+    }
+
+    .category-container img {
+        width: 100%;
+        /* Image takes full width on small screens */
+        margin-right: 0;
+        /* Remove right margin */
+        margin-bottom: 10px;
+        /* Add margin below the image */
     }
 
     .category-container a {
-        font-size: 1em; /* Smaller font size for links */
+        font-size: 1.1em;
+        /* Slightly smaller font for links */
+    }
+
+    .category-container p {
+        font-size: 0.9em;
+        /* Slightly smaller font for description */
     }
 }
